@@ -37,7 +37,6 @@ function addNewAccount(): void {
       <span class="account_title">Тип записи</span>
       <span class="account_title">Логин</span>
       <span class="account_title">Пароль</span>
-      <span class="account_title"></span>
     </div>
     <Account v-for="account in accountStore.getAccount()" :key="account.id" :account="account" />
   </main>
