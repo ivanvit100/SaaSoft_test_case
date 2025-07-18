@@ -1,47 +1,37 @@
-# element-plus-vite-starter
+# Менеджер учётных записей
 
-> A starter kit for Element Plus with Vite
+![Preview](preview.png)
 
-- Preview: <https://vite-starter.element-plus.org>
+Данный проект — тестовое задание на вакансию в компанию [**SaaSoft**](https://saasoft.ru/).  
+Это приложение для управления списком учётных записей с поддержкой локальных и LDAP-аккаунтов, реализованное на Vue3 + TypeScript + Pinia + Element Plus.
 
-This is an example of on-demand element-plus with [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components).
+## Возможности
 
-> If you want to import all, it may be so simple that no examples are needed. Just follow [quickstart | Docs](https://element-plus.org/zh-CN/guide/quickstart.html) and import them.
+- Добавление, редактирование и удаление учётных записей
+- Поддержка типов аккаунтов: Локальная и LDAP
+- Валидация обязательных полей (логин, пароль)
+- Валидация длины меток (максимум 50 символов на каждую из меток)
+- Метки вводятся через `;` и преобразуются в массив объектов
+- Пароль скрывается для LDAP-аккаунтов и сохраняется как `null`
+- Все данные сохраняются в localStorage и отображаются после перезагрузки
 
-If you just want an on-demand import example `manually`, you can check [unplugin-element-plus/examples/vite](https://github.com/element-plus/unplugin-element-plus/tree/main/examples/vite).
+## Стек
 
-If you want to a nuxt starter, see [element-plus-nuxt-starter](https://github.com/element-plus/element-plus-nuxt-starter/).
+- **Vue.js 3** (Composition API)
+- **TypeScript**
+- **Pinia** (стейт-менеджер)
+- **Element Plus** (UI фреймворк)
 
-## Project setup
+## Запуск
 
-```bash
-pnpm install
-
-# npm install
-# yarn install
-```
-
-### Compiles and hot-reloads for development
-
-```bash
+```sh
+npm install
 npm run dev
 ```
 
-### Compiles and minifies for production
+## Структура
 
-```bash
-npm run build
-```
-
-## Usage
-
-```bash
-git clone https://github.com/element-plus/element-plus-vite-starter
-cd element-plus-vite-starter
-npm i
-npm run dev
-```
-
-### Custom theme
-
-See `src/styles/element/index.scss`.
+- [`App.vue`](/src/App.vue) — главный компонент, список аккаунтов, кнопка добавления
+- [`Account.vue`](/src/components/Account.vue) — компонент одной учётной записи
+- [`accountStore.ts`](/src/stores/accountStore.ts) — Pinia для управления аккаунтами
+- [`types.ts`](/src/types.ts) — типы данных
